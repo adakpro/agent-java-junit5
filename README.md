@@ -497,6 +497,6 @@ You can also see the test classes and individual test results by clicking on the
 
 ![RP. Test Results](integration_manual_files/step_test_results.png)
 
-# Copyright Notice
+## Authors
+**ehsan khashaee** - *Core service implementation* - [adak](https://github.com/adakpro)
 
-Licensed under the [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0) license (see the LICENSE.md file).
