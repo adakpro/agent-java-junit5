@@ -1,18 +1,12 @@
 # agent-java-junit5
-[![Maven Central](https://img.shields.io/maven-central/v/com.epam.reportportal/agent-java-junit5.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:%22com.epam.reportportal%22%20AND%20a:%22agent-java-junit5%22)
-[![CI Build](https://github.com/reportportal/agent-java-junit5/actions/workflows/ci.yml/badge.svg)](https://github.com/reportportal/agent-java-junit5/actions/workflows/ci.yml)
-[![codecov](https://codecov.io/gh/reportportal/agent-java-junit5/branch/develop/graph/badge.svg?token=tq832Jsqef)](https://codecov.io/gh/reportportal/agent-java-junit5)
-[![Join Slack chat!](https://reportportal-slack-auto.herokuapp.com/badge.svg)](https://reportportal-slack-auto.herokuapp.com)
-[![stackoverflow](https://img.shields.io/badge/reportportal-stackoverflow-orange.svg?style=flat)](http://stackoverflow.com/questions/tagged/reportportal)
-[![Build with Love](https://img.shields.io/badge/build%20with-❤%EF%B8%8F%E2%80%8D-lightgrey.svg)](http://reportportal.io?style=flat)
 ---
-# ReportPortal [JUnit5](https://junit.org/junit5/) Integration
+# adaklabs [JUnit5](https://junit.org/junit5/) Integration
 
-The repository contains [JUnit5 Extension](https://junit.org/junit5/docs/current/user-guide/#extensions) for [ReportPortal](http://reportportal.io/) integration.
+The repository contains [JUnit5 Extension](https://junit.org/junit5/docs/current/user-guide/#extensions) for [adaklabs](http://adak.ir/) integration.
 
 ## Getting Started
 
-To start using Report Portal with JUnit 5 create a service location file: 
+To start using adaklabs with JUnit 5 create a service location file: 
 1. Create folders **_/META-INF/services_** in **_resources_**
 2. Put there a file named **_org.junit.jupiter.api.extension.Extension_**
 3. Put a default implementation reference as a single row into the file: **_com.epam.reportportal.junit5.ReportPortalExtension_** 
@@ -87,8 +81,6 @@ By default reporting of @Disabled tests is switched off. To switch it on - add n
 
 This manual will walk you through the steps for integration of Report Portal with JUnit5 based project
 
-First, make sure you have installed Report Portal, the installation steps could be found [here](http://reportportal.io/docs/Installation-steps)
-
 We’ll assume that Report Portal is installed and running on <http://localhost:8080>
 
 ## Step 1 - Create new project (Maven)
@@ -111,7 +103,7 @@ We’ll assume that Report Portal is installed and running on <http://localhost:
 
 #### 2.1 Add following dependencies:
 
-*Report Portal agent implementation for JUnit 5*
+*adaklabs agent implementation for JUnit 5*
 ```xml
 <dependency>
     <groupId>com.epam.reportportal</groupId>
@@ -119,20 +111,20 @@ We’ll assume that Report Portal is installed and running on <http://localhost:
     <version>5.1.4</version>
 </dependency>
 ```
-> Latest version of the agent, could be found [here](https://search.maven.org/search?q=g:%22com.epam.reportportal%22%20AND%20a:%22agent-java-junit5%22)
+> Latest version of the agent, could be found [here](https://search.maven.org/search?q=g:%22com.epam.ADAKLABS%22%20AND%20a:%22agent-java-junit5%22)
 
 
-The Report Portal agent for JUnit 5 includes the JUnit 5 library dependency, and so we won't need other explicit JUnit 5 dependencies  
+The adaklabs agent for JUnit 5 includes the JUnit 5 library dependency, and so we won't need other explicit JUnit 5 dependencies  
 However, if you are adding Report Portal agent to existing project, with JUnit 5 dependency already declared, pay attention to dependency transitivity and the conflicts that might arise
 
 > More about JUnit 5 dependencies structure could be found [here](https://junit.org/junit5/docs/current/user-guide/#dependency-metadata)
 
-#### 2.2 Add Report Portal dedicated logger wrapper
-Report Portal provides it's own logger implementation for major logging frameworks like *log4j* and *logback*
+#### 2.2 Add adaklabs dedicated logger wrapper
+adaklabs provides it's own logger implementation for major logging frameworks like *log4j* and *logback*
 
 If you prefer using **Logback** logging library, add following dependencies:
 
-*ReportPortal logback logger dependency*
+*ADAKLABS logback logger dependency*
 ```xml
 <dependency>
     <groupId>com.epam.reportportal</groupId>
@@ -140,7 +132,7 @@ If you prefer using **Logback** logging library, add following dependencies:
     <version>5.1.1</version>
 </dependency>
 ```
-> Up to date version could be found [here](https://search.maven.org/search?q=g:%22com.epam.reportportal%22%20AND%20a:%22logger-java-logback%22)
+> Up to date version could be found [here](https://search.maven.org/search?q=g:%22com.epam.ADAKLABS%22%20AND%20a:%22logger-java-logback%22)
 
 *The logback itself*
 ```xml
@@ -153,7 +145,7 @@ If you prefer using **Logback** logging library, add following dependencies:
 
 If you prefer using **Log4j** logging library, add following dependencies:
 
-*ReportPortal log4j logger dependency*
+*ADAKLABS log4j logger dependency*
 ```xml
 <dependency>
     <groupId>com.epam.reportportal</groupId>
@@ -161,7 +153,7 @@ If you prefer using **Log4j** logging library, add following dependencies:
     <version>5.1.4</version>
 </dependency>
 ```
-> Up to date version could be found [here](https://search.maven.org/search?q=g:%22com.epam.reportportal%22%20AND%20a:%22logger-java-log4j%22)
+> Up to date version could be found [here](https://search.maven.org/search?q=g:%22com.epam.ADAKLABS%22%20AND%20a:%22logger-java-log4j%22)
 
 *The log4j itself*
 ```xml
@@ -225,19 +217,18 @@ public class MyTests {
     </Loggers>
 </Configuration>
 ```
-It's needed to add `ReportPortalAppender` into this (as shown in the example)
+It's needed to add `ADAKLABSAppender` into this (as shown in the example)
 
 By this moment, your project tree should look somewhat like the this:
 
 ![Project structure](integration_manual_files/step_project_structure.png)
 
-## Step 4 - Configuring ReportPortal
+## Step 4 - Configuring ADAKLABS
 
-#### 4.1 Open ReportPortal UI
+#### 4.1 Open adaklabs UI
 
 Go to *http:$IP_ADDRESS_OF_REPORT_PORTAL:8080* (by default it is *http://localhost:8080*)
 
-Login as **Admin** user and create the project (more details [here](http://reportportal.io/docs/Deploy-ReportPortal) and [here](http://reportportal.io/docs/Creation-of-project))
 
 ![RP. Add Project](integration_manual_files/step_add_project.png)
 
@@ -250,23 +241,23 @@ Go to *Administrative* -> *My Test Project* -> *Members* -> *Add user*
 
 ![RP. Add user](integration_manual_files/step_add_user.png)
 
-## Step 5 - Link ReportPortal with your tests
+## Step 5 - Link adaklabs with your tests
 
-#### 5.1 - Add `reportportal.properties`
+#### 5.1 - Add `ADAKLABS.properties`
 
-After you have created new user in your project, you can get `reportportal.properties` file example from the user *Profile* page
+After you have created new user in your project, you can get `ADAKLABS.properties` file example from the user *Profile* page
 
 To do that, login as created user and go to *User icon* in header -> *Profile*
 
-There, in *Configuration Examples* section, you can find the example of `reportportal.properties` file for that user
+There, in *Configuration Examples* section, you can find the example of `ADAKLABS.properties` file for that user
 
 ![RP. User profile](integration_manual_files/step_user_profile.png)
 
-Returning back to the code. In your project, create file named `reportportal.properties` in `resources` folder and copy&paste the contents form the user profile page
+Returning back to the code. In your project, create file named `ADAKLABS.properties` in `resources` folder and copy&paste the contents form the user profile page
 
 *Example:*
 ```properties
-[reportportal.properties]
+[ADAKLABS.properties]
 rp.endpoint = http://localhost:8080
 rp.uuid = d50810f1-ace9-44fc-b1ba-a0077fb3cc44
 rp.launch = jack_TEST_EXAMPLE
@@ -274,15 +265,15 @@ rp.project = my_test_project
 rp.enable = true
 ```
 
-> More details on `reportportal.properties` file could be found [here](https://github.com/reportportal/client-java)
+> More details on `ADAKLABS.properties` file could be found [here](https://github.com/ADAKLABS/client-java)
 
 #### 5.2 - Register Report Portal agent in JUnit 5
-There are two options how you can enable ReportPortal extension in your tests:
+There are two options how you can enable ADAKLABS extension in your tests:
 - By specifying `@ExtendWith` annotation
 - By service location
 
-##### Register ReportPortal extension with annotation
-Each test marked with `@ExtendWith(ReportPortalExtension.class)` will be reporter to ReportPortal.
+##### Register ADAKLABS extension with annotation
+Each test marked with `@ExtendWith(ADAKLABSExtension.class)` will be reporter to ADAKLABS.
 This is an inheritable annotation, that means you can put it on a superclass and all child classes will
 also use a specified extension.
 
@@ -310,7 +301,7 @@ public class EnumParametersTest {
 }
 ```
 
-##### Register ReportPortal extension through service location
+##### Register ADAKLABS extension through service location
 For those who implement their own custom extensions we decided to remove `/META-INF/services` file from our project.
 To use our standard non-custom extension you need to add this file into your project by yourself.
 To do that create a file named `org.junit.jupiter.api.extension.Extension` in `src/test/resources/META-INF/services` folder
@@ -493,10 +484,10 @@ test {
 
 ## Step 6 - Observing test run report
 
-After you linked the Report Portal JUnit 5 agent using one of the approaches described above and ran your tests, you should be able to see the results in your ReportPortal UI instance  
-To do that, login to ReportPortal, and go to *Left Panel* -> *Launches*
+After you linked the adaklabs JUnit 5 agent using one of the approaches described above and ran your tests, you should be able to see the results in your ADAKLABS UI instance  
+To do that, login to ADAKLABS, and go to *Left Panel* -> *Launches*
 
-You should see the launch there, with the name equal to the value of `rp.launch` from your `reportportal.properties` file
+You should see the launch there, with the name equal to the value of `rp.launch` from your `ADAKLABS.properties` file
 
 *Example:*
 
